@@ -56,12 +56,12 @@ msc {
 
   # Arcs
   |||;
-  s => c [label="1. publicKeyCredentialCreationOptions\n(challenge)\n\n\n"];
+  s => c [label="1. publicKeyCredentialRequestOptions\n(challenge)\n\n\n"];
   c => a [label="2. authenticatorGetAssertion\n(replying party id, clientDataHash)\n\n\n"];
   a rbox a [label="\n3. User verification, create assertion\n"];
   |||;
-  a => c [label="4. authenticatorGetAssertionResponse\n(credential, authData, signature)\n\n\n"];
-  c => s [label="5. authenticatorAssertionResponse\n(clientData, authData, signature)\n\n\n"];
+  a => c [label="4. authenticatorGetAssertionResponse\n(id, authData, signature, userHandle)\n\n\n"];
+  c => s [label="5. authenticatorAssertionResponse\n(id, clientData, authData,\n signature, userHandle)\n\n\n"];
   s rbox s [label="\n6. Sever validation\n"];
   |||;
 }
